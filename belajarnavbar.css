@@ -1,0 +1,437 @@
+:root {
+    --color-accent: #051923;
+    --color-text: #f8f9fa;
+    --color-blue: #023e8a;
+    --color-grey: #475569;
+}
+
+html {
+    scroll-behavior: smooth;                                                                                                /* Membuat perpindahan ke section (Home, About, Gallery, Contact) menjadi halus saat link navbar diklik */   
+}
+
+body {
+    background: var(--color-text);
+    min-height: 100vh;
+    color: var(--color-accent);
+
+}
+
+* {                                                                                                                         /* Reset CSS (menghilangkan margin & padding bawaan browser) */
+    margin: 0px;                                                                                                            /* Menghapus jarak luar */
+    padding: 0px;                                                                                                           /* Menghaous jarak dalam */
+    box-sizing: border-box;                                                                                                 /* width & height tetap sesuai yang ditentukan, karena pading dan border dihitung di dalam ukuran elemen, bukan ditambah di luar */
+    font-family: "Plus Jakarta Sans", sans-serif;                                                                                      /* Font seluruh website */
+}
+
+.countainer {                                                                                                               /* Container Navbar */
+    display: flex;                                                                                                          /* Mengaktifkan Flexbox */
+    width: 100%;                                                                                                            /*  Lebar penuh */
+}
+
+.wrapper {                                                                                                                  /* Navbar */
+    width: 100%;                                                                                                            /* Lebar penuh */
+    height: 60px;                                                                                                           /* Tinggi navbar */
+    background-color: var(--color-text);                                                                                            /* Warna navbar */
+    display: flex;                                                                                                          /* Susun isi navbar */
+    font-size: 25px;                                                                                                        /* Ukuran font */
+    padding: 35px 5%;                                                                                                          /* Jarak isi ke tepi */
+    justify-content: space-between;                                                                                         /* Mengubah menjadi Logo di kiri dan Menu di kanan */ 
+    align-items: center;                                                                                                    /* Posisi setengah secara vertikal */
+    position: fixed;                                                                                                        /* Navbar tetap di atas walaupun sudah di pencet ke halaaman yang lain */
+    top: 0;                                                                                                                 /* Menempel di atas */
+    left: 0;                                                                                                                /* menempel daari kiri */
+    width: 100%;                                                                                                            /* Membuat elemen melebar mengikuti seluruh lebar parent/countainer */
+    z-index: 1000;                                                                                                          /* Selalu di atas elemen lain */
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.brand {                                                                                                                    /* Logo */
+    display: flex;                                                                                                          /* susun isi navbar */
+    flex-direction: row;                                                                                                    /* Susun horizontal */
+    text-transform: capitalize;                                                                                             /* Huruf awal kapital */
+    font-weight: 700;                                                                                                       /* Teks tebal */
+}
+
+.firstname {
+    color: var(--color-accent);                                                                                                       /* Warna logo */
+}
+
+.navigation {                                                                                                               /* Menu navbar */   
+    display: flex;                                                                                                          /* Menu berjajar */
+    align-items: center;                                                                                                    /* Tengah vertikal */
+    justify-content: center;                                                                                                /* Tengah horizontal */
+}
+
+.navigation li {                                                                                                            /* Item menu */
+    list-style: none;                                                                                                       /* Hilangkan Bullet */
+    padding: 15px;                                                                                                          /* Jarak antar menu */
+}
+
+.navigation li a {                                                                                                          /* Link menu */    
+    color: var(--color-grey);                                                                                                       /* Warna teks */
+    display: inline-block;                                                                                                  /* Agar transform bisa digunakan */
+    font-size: 20px;                                                                                                        /* Ukuran teks */
+    text-decoration: none;                                                                                                  /* Hilangkan gaaris bawah */
+    transition: 0.3s ease;                                                                                                  /* Animasi halus */
+    text-transform: capitalize;                                                                                             /* Huruf awal kapital */
+    position: relative;
+}
+
+.navigation li a::after {                                                                                                   /* Garis bawah (awalnya tidak terlihat) */
+    content: "";
+    position: absolute;
+    left: 50%;                                                                                                              /* Titik mulai dari tengah */
+    bottom: -4px;                                                                                                           /* Jarak garis dari teks */
+    width: 0%;                                                                                                              /* Lebar awal 0 (belum kelihatan) */
+    height: 2px;                                                                                                            /* Ketebalan garis */
+    background-color: var(--color-blue);                                                                                          /* Warna garis */
+    border-radius: 2px;                                                                                                     /* Ujung garis tidak tajam */
+    transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1), left 0.35s cubic-bezier(0.65, 0, 0.35, 1);                      /* Animasi mekar dari tengah */
+}
+
+.navigation li a:hover {                                                                                                    /* Efek saat mouse diarahkan */   
+    color: var(--color-blue);                                                                                             /* Ubah warna */
+                                                                         
+}
+
+.navigation li a:hover::after {                                                                                            /* Garis muncul saat hover */
+    width: 100%;                                                                                                            /* Lebar penuh */
+    left: 0%;                                                                                                               /* Balik ke posisi kiri */
+}
+
+section {                                                                                                                   /* Semua section */   
+    min-height: 100vh;                                                                                                      /* Tinggi setiap section minimal 1 layar */
+    padding-top: 60px;                                                                                                      /* Agar tidak tertutup navbar */
+}
+
+.home {
+    display: flex;
+    padding: 60px 10%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.hello {
+    color: var(--color-grey);
+}
+
+span {
+    color: var(--color-blue);
+}
+
+.satria {
+    color: var(--color-accent);
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.developer {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.description {
+    color: var(--color-grey);
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: flex;
+    font-size: 32px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: translateY(-5px);
+    background-color: var(--color-blue);
+    color: var(--color-text);
+    border-color: var(--color-blue);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 25px;                                                                                        /* Jarak dari social media icons */
+    padding: 12px 28px;
+    background-color: var(--color-blue);                                                                     /* Fill biru */
+    color: var(--color-text);                                                                                 /* Teks putih biar kontras */
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;                                                                                      /* Bentuk pill */
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);                                                                              /* Efek naik dikit */
+    background-color: var(--color-accent);                                                                    /* Warna berubah pas hover */
+}
+
+.picturehome {
+    position: relative;                                                                                      
+}
+
+.photo-blob {
+    position: absolute;
+    inset: -14px;                                                                                            
+    background-color: var(--color-blue);
+    opacity: 0.12;                                                                                          
+    border-radius: 50%;
+    z-index: -1;                                                                                            
+}
+
+
+.picturehome-img {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+    
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+ 
+.about .section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+ 
+.about-intro {
+  max-width: 640px;
+  margin: 0 auto 36px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-grey);
+}
+ 
+.about-intro strong {
+  color: var(--color-blue); /* accent biru */
+}
+ 
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 32px;
+}
+ 
+.about-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(5, 25, 35, 0.08);
+}
+ 
+.about-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--color-blue);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+ 
+.about-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-accent);
+}
+ 
+.about-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-grey);
+}
+ 
+.about-quote {
+  font-style: italic;
+  color: var(--color-blue);
+  font-size: 17px;
+}
+ 
+/* Responsive: tumpuk card jadi 1 kolom di layar kecil */
+@media (max-width: 700px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+ 
+.gallery .section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+ 
+.gallery .section-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+ 
+.gallery-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+ 
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 30px;
+  border-radius: 2px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+ 
+.polaroid-caption {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-align: center;
+  font-family: 'Caveat', cursive; /* opsional: font tulisan tangan, lihat catatan di bawah */
+}
+ 
+/* Kemiringan tiap polaroid biar kesan natural/ditempel manual */
+.polaroid-1 { transform: rotate(-5deg); }
+.polaroid-2 { transform: rotate(3deg); margin-top: 16px; }
+.polaroid-3 { transform: rotate(-2deg); }
+ 
+/* Pas di-hover, foto jadi lurus dan sedikit membesar */
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+ 
+/* Responsive: tumpuk ke bawah di layar kecil, hilangkan kemiringan biar rapi */
+@media (max-width: 700px) {
+  .gallery-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .polaroid-1, .polaroid-2, .polaroid-3 {
+    transform: rotate(0deg);
+    margin-top: 0;
+  }
+}
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.contact-panel {
+  background: #fff;
+  color: var(--color-accent);
+  border: 2px solid var(--color-blue);
+  border-radius: 20px;
+  padding: 56px 48px;
+  max-width: 560px;
+  width: 100%;
+}
+.contact-panel .section-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; color: var(--color-accent); }
+.contact-subtitle { font-size: 15px; color: var(--color-grey); margin-bottom: 34px; }
+
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.contact-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+.contact-pill i { font-size: 17px; color: var(--color-blue); }
+.contact-pill:hover { border-color: var(--color-blue); background: #eef4fb; transform: translateY(-2px); }
+
+.cta-button-outline {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--color-blue);
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.cta-button-outline:hover { transform: translateY(-3px); background-color: var(--color-accent); }
