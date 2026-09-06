@@ -44,7 +44,7 @@ img {
     background-color: var(--color-text);                                                                                            
     display: flex;                                                                                                          
     font-size: 25px;                                                                                                       
-    padding: 16px 5%;                                                                                                          
+    padding: 12px 5%;                                                                                                          
     justify-content: space-between;                                                                                         
     align-items: center;                                                                                                   
     position: fixed;                                                                                                        
